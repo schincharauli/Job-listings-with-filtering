@@ -26,6 +26,8 @@ const elementCreator = (tag, className, src, text, event, eventFc) => {
     
 }
 
+
+
 for(let i = 0; i < data.length; i++) {
 
     const {company, logo, statusNew, featured, position, role, level, postedAt,contract,location,languages, tools} = data[i];
@@ -57,38 +59,45 @@ for(let i = 0; i < data.length; i++) {
 
     const additionalFeatures = elementCreator('div', 'additional-features', null);
     const roleRangeings = elementCreator('p', 'role-rangeings', null, role );
-    const positionLevel = elementCreator('p', 'position-level', null, level)
-    const proggramingLanguages = elementCreator('p', 'proggraming-languages',null, languages);
-    const additionalTools = elementCreator('p', 'additional-tools', null, tools);
+    const positionLevel = elementCreator('p', 'position-level', null, level);
 
-    console.log(typeof proggramingLanguages);
+    
+    
 
-    // const newlyAded = elementCreator('h2', 'new', null, statusNew);
-    // const feature = elementCreator('h2', 'featured', null, featured);
+    const proggramingLanguages = elementCreator('div', 'proggraming-languages',null);
+
     
-    // write above two elements as append child elements
-    
-    
-    // function myFun(){
-    //     for(let i = 0; i < proggramingLanguages.length; proggramingLanguages++){
-    //         let output = proggramingLanguages[i] + ',';
-    //         console.log(output);
-    //         document.querySelector('.proggraming-languages').innerHTML += output;
-    //         console.log(output);
-    //     }
+    // console.log(data[i].languages);
+
+    // for(let i = 0; i < data[i].languages.length; i++){
+
+    //     let programmingLangEl = elementCreator('p', 'programming-lang-el', null, languages);
+        
+    //     programmingLangEl.textContent = data[i].languages[i];
+
+    //     proggramingLanguages.append(programmingLangEl);
     // }
 
-    // myFun();
-   
-    // let pro = proggramingLanguages;
-    // const myArray = proggramingLanguages.split(",");
-``
+
+ 
 
     
-    // let text = "How are you doing today?";
-    // const myArray = text.split("");
     
-    // document.querySelector(".proggraming-languages").innerHTML = myArray;
+    
+  
+
+    const additionalTools = elementCreator('p', 'additional-tools', null, tools);
+
+
+
+    const newlyAded = elementCreator('p', 'new', null, statusNew);
+    newlyAded.textContent = "NEW!"
+
+
+    const feature = elementCreator('p', 'featured', null, featured);
+    feature.textContent = "FEATURED";
+    
+    
 
 
     
@@ -106,4 +115,19 @@ for(let i = 0; i < data.length; i++) {
     innerCardTwo.append(additionalFeatures);
     additionalFeatures.append(roleRangeings,positionLevel,proggramingLanguages,additionalTools);
 
+
+
+    if(statusNew){
+        companyName.append(newlyAded);
+    }
+
+    if(featured){
+        companyName.append(feature);
+    }
 }
+
+   
+
+
+
+

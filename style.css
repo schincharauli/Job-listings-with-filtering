@@ -96,10 +96,41 @@ body {
   height: 48px;
 }
 
+.company-name{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .company-title {
   font-size: 13px;
   margin: 13px 0px 14px;
   color: var(--DesaturatedDarkCyan);
+}
+
+.new{
+    height: 24px;
+    width: 48px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--DesaturatedDarkCyan);
+    padding: 7.3px;
+}
+
+.featured{
+  height: 24px;
+  width: 76px;
+  border-radius: 12px;
+  background-color: var(--veryDarkGreiishe);
+  color: #ffffff;
+  padding: 7px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+
+
 }
 
 .position-name {
@@ -107,6 +138,7 @@ body {
   font-weight: 700;
   color: var(--veryDarkGreiishe);
 }
+
 
 .position-name:hover {
   color: var(--DesaturatedDarkCyan);
@@ -162,7 +194,7 @@ body {
   color: #ffffff;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1440px) {
   .header {
     background: url("./images/bg-header-desktop.svg");
     background-color: var(--DesaturatedDarkCyan);
