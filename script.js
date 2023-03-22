@@ -31,12 +31,19 @@ for(let i = 0; i < data.length; i++) {
     const {company, logo, statusNew, featured, position, role, level, postedAt,contract,location,languages, tools} = data[i];
 
     const vacancyCard = elementCreator('div', 'job-card');
+
+    const innerCardOne = elementCreator('div', 'inner-card-one', null);
+    const innerCardTwo = elementCreator('div', 'inner-card-two', null);
+
+
     const imgContainer = elementCreator('div', 'image-container');
     const logoElement = elementCreator('img', 'image', logo);
 
     const companyName = elementCreator('div', 'company-name');
     const companyTitle = elementCreator('h2', 'company-title', null, company);
-    
+
+
+    const positionDiv = elementCreator('div', 'position-div', null);
     const positionTitle = elementCreator('p', 'position-name', null, position);
     
     const timeNlocation = elementCreator('div','time-and-location' )
@@ -84,13 +91,19 @@ for(let i = 0; i < data.length; i++) {
     // document.querySelector(".proggraming-languages").innerHTML = myArray;
 
 
+    
+    vacancyCard.append(imgContainer, innerCardOne, innerCardTwo );
+    innerCardOne.append(companyName, positionDiv,timeNlocation, horizonalLine,additionalFeatures);
+    
 
-    vacancyCard.append(imgContainer, companyName, positionTitle,timeNlocation, horizonalLine,additionalFeatures);
+    positionDiv.append(positionTitle)
     companyName.append(companyTitle);
     jobCard.append(vacancyCard);
-    // jobCard.append(logoElement);
+
     timeNlocation.append(postedTime, contractType, jobLocation);
     imgContainer.append(logoElement);
+
+    innerCardTwo.append(additionalFeatures);
     additionalFeatures.append(roleRangeings,positionLevel,proggramingLanguages,additionalTools);
 
 }
