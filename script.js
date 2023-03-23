@@ -34,6 +34,7 @@ for(let i = 0; i < data.length; i++) {
 
     const vacancyCard = elementCreator('div', 'job-card');
 
+
     const innerCardOne = elementCreator('div', 'inner-card-one', null);
     const innerCardTwo = elementCreator('div', 'inner-card-two', null);
 
@@ -41,12 +42,14 @@ for(let i = 0; i < data.length; i++) {
     const imgContainer = elementCreator('div', 'image-container');
     const logoElement = elementCreator('img', 'image', logo);
 
+
     const companyName = elementCreator('div', 'company-name');
     const companyTitle = elementCreator('h2', 'company-title', null, company);
 
 
     const positionDiv = elementCreator('div', 'position-div', null);
     const positionTitle = elementCreator('p', 'position-name', null, position);
+
     
     const timeNlocation = elementCreator('div','time-and-location' )
     const postedTime = elementCreator('p', 'posted-time', null, postedAt)
@@ -61,33 +64,26 @@ for(let i = 0; i < data.length; i++) {
     const roleRangeings = elementCreator('p', 'role-rangeings', null, role );
     const positionLevel = elementCreator('p', 'position-level', null, level);
 
-    
-    
 
     const proggramingLanguages = elementCreator('div', 'proggraming-languages',null);
 
-    
-    // console.log(data[i].languages);
 
-    // for(let i = 0; i < data[i].languages.length; i++){
+    for(let j = 0; j < data[i].languages.length; j++){
 
-    //     let programmingLangEl = elementCreator('p', 'programming-lang-el', null, languages);
+        let programmingLangEl = elementCreator('p', 'programming-lang-el', null, languages);
+        proggramingLanguages.append(programmingLangEl);
         
-    //     programmingLangEl.textContent = data[i].languages[i];
-
-    //     proggramingLanguages.append(programmingLangEl);
-    // }
+        programmingLangEl.textContent = data[i].languages[j];
+    }
 
 
- 
-
+    for(let j = 0; j < data[i].tools.length; j++){
+        let additionalTools = elementCreator('p', 'additional-tools', null, tools);
+        proggramingLanguages.append(additionalTools);
+        
+        additionalTools.textContent = data[i].tools[j];
+    }
     
-    
-    
-  
-
-    const additionalTools = elementCreator('p', 'additional-tools', null, tools);
-
 
 
     const newlyAded = elementCreator('p', 'new', null, statusNew);
@@ -100,7 +96,6 @@ for(let i = 0; i < data.length; i++) {
     
 
 
-    
     vacancyCard.append(imgContainer, innerCardOne, innerCardTwo );
     innerCardOne.append(companyName, positionDiv,timeNlocation, horizonalLine,additionalFeatures);
     
@@ -113,7 +108,7 @@ for(let i = 0; i < data.length; i++) {
     imgContainer.append(logoElement);
 
     innerCardTwo.append(additionalFeatures);
-    additionalFeatures.append(roleRangeings,positionLevel,proggramingLanguages,additionalTools);
+    additionalFeatures.append(roleRangeings,positionLevel,proggramingLanguages);
 
 
 
@@ -124,6 +119,7 @@ for(let i = 0; i < data.length; i++) {
     if(featured){
         companyName.append(feature);
     }
+    
 }
 
    

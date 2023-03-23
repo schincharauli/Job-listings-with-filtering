@@ -136,6 +136,7 @@ body {
 .position-name {
   font-size: 15px;
   font-weight: 700;
+  margin: 12px 0px;
   color: var(--veryDarkGreiishe);
 }
 
@@ -170,12 +171,12 @@ body {
   display: flex;
   margin-top: 16px;
   gap: 10px;
-  flex-direction: wrap;
+  flex-wrap: wrap;
 }
 
 .role-rangeings,
 .position-level,
-.proggraming-languages,
+.programming-lang-el,
 .additional-tools {
   width: auto;
   height: 32px;
@@ -187,12 +188,22 @@ body {
 }
 .role-rangeings:hover,
 .position-level:hover,
-.proggraming-languages:hover,
+.programming-lang-el:hover,
 .additional-tools:hover {
   cursor: pointer;
   background-color: var(--DesaturatedDarkCyan);
   color: #ffffff;
 }
+
+
+
+.proggraming-languages{
+  display: flex;
+  gap: 10px;
+}
+
+
+
 
 @media (min-width: 1440px) {
   .header {
