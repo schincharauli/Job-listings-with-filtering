@@ -4,8 +4,11 @@ const jobCard = document.querySelector(".card-section");
 const filterCard = document.querySelector(".filter-card");
 const choosenSection = document.querySelector(".chosen-section");
 
+filterCard.style.display = 'none';
+
 const elementCreator = (tag, className, src, text, event, eventFc) => {
-  const element = document.createElement(tag);
+const element = document.createElement(tag);
+
   element.classList.add(className);
   
   if (src) {
@@ -89,6 +92,7 @@ for (let i = 0; i < data.length; i++) {
     programmingLangEl.textContent = data[i].languages[j];
   }
 
+
   for (let j = 0; j < data[i].tools.length; j++) {
     let additionalTools = elementCreator("p", "additional-tools", null, tools);
     proggramingLanguages.append(additionalTools);
@@ -96,11 +100,13 @@ for (let i = 0; i < data.length; i++) {
     additionalTools.textContent = data[i].tools[j];
   }
 
+
   const newlyAded = elementCreator("p", "new", null, statusNew);
   newlyAded.textContent = "NEW!";
 
   const feature = elementCreator("p", "featured", null, featured);
   feature.textContent = "FEATURED";
+  
 
   vacancyCard.append(imgContainer, innerCardOne, innerCardTwo);
   innerCardOne.append(
@@ -139,48 +145,89 @@ for (let i = 0; i < data.length; i++) {
 let vacanyRole = document.querySelectorAll('.role-rangeings');
 
 let position = document.querySelectorAll('.position-level');
+let proggramingLanguages = document.querySelectorAll('.programming-lang-el');
+let aditionalToolsFilterEl = document.querySelectorAll('.additional-tools');
+
+
+
 
 
 vacanyRole.forEach(function(e) {
   e.addEventListener('click', function() {
+  filterCard.style.display = 'block';
+
   
     
     if(!myArray.includes(e.textContent) ){
       myArray.push(e.textContent);
     }
 
+    filterOutputFunc();
+  })
+});
+
+
+
+  position.forEach(function(val) {
+  val.addEventListener('click', function() {
+  filterCard.style.display = 'block';
+
+
+    // console.log(position);
+
+    if(!myArray.includes(val.textContent) ){
+      myArray.push(val.textContent);  
+
+      
+
+      console.log(myArray) 
+  }
+
+  filterOutputFunc();
+})
+
+});
+
+
+
+proggramingLanguages.forEach(function(val) {
+  val.addEventListener('click', function() {
+  filterCard.style.display = 'block';
+    if(!myArray.includes(val.textContent) ){
+      myArray.push(val.textContent);  
+  }
+    filterOutputFunc();
+  
+})
+})
+
+aditionalToolsFilterEl.forEach(function(val) {
+  val.addEventListener('click', function() {
+  filterCard.style.display = 'block';
+
+    if(!myArray.includes(val.textContent) ){
+      myArray.push(val.textContent);  
+  }
+
+    filterOutputFunc();
+})
+})
+
 
   
-    position.forEach(function(val) {
-      val.addEventListener('click', function() {
-
-        console.log(position);
-
-        if(!myArray.includes(val.textContent) ){
-          myArray.push(val.textContent);  
-          console.log(myArray) 
-      }
-    })
-    
-
-    
+   
+  function filterOutputFunc(){
 
     choosenSection.innerHTML = "";
 
     for(let i = 0; i < myArray.length; i++){
-
-
-      
       const filterRole = elementCreator('div', 'role', null);
     
-
       const filterChoosenRole = elementCreator('div', 'choosen-role', null);
       const filterRoleName = elementCreator('span', 'role-name', null);
       filterRoleName.textContent = myArray[i];
       const filterSpan = elementCreator('span', 'filter-span');
       const removeIcon = elementCreator('img', 'icon-remove', "./images/icon-remove.svg");
-
-      
 
       const clearBtn = elementCreator('div', 'clear-btn', null);
       const button = elementCreator('button', 'button', null);
@@ -191,11 +238,26 @@ vacanyRole.forEach(function(e) {
       filterSpan.append(removeIcon);
 
     }
-    
-    return myArray
-  
-  });
-  
-})
+  }
 
-})
+  const removeBtn = document.getElementById("btn");
+  removeBtn.addEventListener('click', resetEverything);
+ 
+  function resetEverything(){
+    myArray = [];
+    filterOutputFunc();
+    filterCard.style.display = 'none';
+  }
+
+
+  
+ 
+  
+
+
+
+
+
+
+  
+  
