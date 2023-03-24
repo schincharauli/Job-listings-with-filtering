@@ -171,21 +171,12 @@ vacanyRole.forEach(function(e) {
   position.forEach(function(val) {
   val.addEventListener('click', function() {
   filterCard.style.display = 'block';
-
-
-    // console.log(position);
-
     if(!myArray.includes(val.textContent) ){
       myArray.push(val.textContent);  
 
-      
-
-      console.log(myArray) 
   }
-
   filterOutputFunc();
 })
-
 });
 
 
@@ -196,19 +187,16 @@ proggramingLanguages.forEach(function(val) {
     if(!myArray.includes(val.textContent) ){
       myArray.push(val.textContent);  
   }
-    filterOutputFunc();
-  
+    filterOutputFunc(); 
 })
 })
 
 aditionalToolsFilterEl.forEach(function(val) {
   val.addEventListener('click', function() {
   filterCard.style.display = 'block';
-
     if(!myArray.includes(val.textContent) ){
       myArray.push(val.textContent);  
   }
-
     filterOutputFunc();
 })
 })
@@ -226,7 +214,7 @@ aditionalToolsFilterEl.forEach(function(val) {
       const filterChoosenRole = elementCreator('div', 'choosen-role', null);
       const filterRoleName = elementCreator('span', 'role-name', null);
       filterRoleName.textContent = myArray[i];
-      const filterSpan = elementCreator('span', 'filter-span');
+      const filterSpan = elementCreator('div', 'filter-span');
       const removeIcon = elementCreator('img', 'icon-remove', "./images/icon-remove.svg");
 
       const clearBtn = elementCreator('div', 'clear-btn', null);
@@ -238,7 +226,35 @@ aditionalToolsFilterEl.forEach(function(val) {
       filterSpan.append(removeIcon);
 
     }
+
+
+
+    let occupationRemoval = document.querySelectorAll('.filter-span');
+    let roleDiv = document.querySelector('.choosen-role');
+
+    occupationRemoval.forEach(function(val){
+      val.addEventListener('click', function(){
+
+        let answer = val.previousElementSibling.textContent;
+
+        let index = myArray.indexOf(answer)
+
+        myArray.splice(index, 1)
+        filterOutputFunc();
+   
+        console.log(val.previousElementSibling)
+        console.log(myArray)
+
+
+        if(myArray.length === 0){
+        filterCard.style.display = 'none';
+          
+        }
+      })
+    })
+    
   }
+
 
   const removeBtn = document.getElementById("btn");
   removeBtn.addEventListener('click', resetEverything);
@@ -253,7 +269,6 @@ aditionalToolsFilterEl.forEach(function(val) {
   
  
   
-
 
 
 
