@@ -43,7 +43,7 @@ body {
 }
 
 .chosen-section,
-.role{
+.role {
   display: flex;
   flex-direction: rom;
   gap: 10px;
@@ -83,8 +83,9 @@ body {
   font-size: 14px;
   font-weight: 700;
   color: var(--darkGreiishe);
-
 }
+
+
 
 .job-card {
   max-width: 100%;
@@ -98,6 +99,17 @@ body {
   box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
 }
 
+
+.aside-design-card{
+  width: 5px;
+  height: 275px;
+  margin-left: 24px;
+
+  background-color: hsla(180, 29%, 50%, 1);
+  border-radius: 5px 0px 0px 5px;
+
+}
+
 .image-container {
   margin-top: -50px;
 }
@@ -107,7 +119,7 @@ body {
   height: 48px;
 }
 
-.company-name{
+.company-name {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -119,18 +131,18 @@ body {
   color: var(--DesaturatedDarkCyan);
 }
 
-.new{
-    height: 24px;
-    width: 48px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #ffffff;
-    background-color: var(--DesaturatedDarkCyan);
-    padding: 7.3px;
+.new {
+  height: 24px;
+  width: 48px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--DesaturatedDarkCyan);
+  padding: 7.3px;
 }
 
-.featured{
+.featured {
   height: 24px;
   width: 76px;
   border-radius: 12px;
@@ -140,8 +152,6 @@ body {
   align-items: center;
   font-size: 14px;
   font-weight: 700;
-
-
 }
 
 .position-name {
@@ -150,7 +160,6 @@ body {
   margin: 12px 0px;
   color: var(--veryDarkGreiishe);
 }
-
 
 .position-name:hover {
   color: var(--DesaturatedDarkCyan);
@@ -206,9 +215,7 @@ body {
   color: #ffffff;
 }
 
-
-
-.proggraming-languages{
+.proggraming-languages {
   display: flex;
   gap: 10px;
 }
@@ -232,30 +239,27 @@ body {
     gap: 30px;
   }
 
-  .image-container{
+  .image-container {
     margin-top: 0;
   }
 
-  .image-container .image{
+  .image-container .image {
     width: 88px;
     height: 88px;
     margin-top: 32px;
     margin-left: 16px;
   }
-  .inner-card-two .additional-features{
+  .inner-card-two .additional-features {
     display: flex;
     justify-content: end;
   }
 
-  .inner-card-one, 
-  .inner-card-two{
+  .inner-card-one,
+  .inner-card-two {
     width: 100%;
     justify-content: space-between;
   }
 
-  
 
   
-
-
 }
